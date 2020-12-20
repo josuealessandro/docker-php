@@ -1,0 +1,14 @@
+version: '3'
+services:
+  test:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+    - 9080:80
+    - 9443:443
+    volumes:
+    - ./teste/:/app
+    environment:
+      DOCUMENT_ROOT: /app/public
+
