@@ -1,4 +1,5 @@
-docker login
+docker rmi $(docker images -a -q) -f
+
 docker build -t php-apache .
 docker tag php-apache josuealessandro/php-apache:8.0
 docker push  josuealessandro/php-apache:8.0
